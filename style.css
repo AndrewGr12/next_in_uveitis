@@ -1,0 +1,645 @@
+/* Force vertical scrollbar and reset */
+html {
+    overflow-y: scroll;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Typography */
+  body {
+    font-family: 'Merriweather', serif;
+    overflow-x: hidden;
+    background-color: #ebeff2;
+  }
+  
+  nav, .nav-list, .nav-item {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+/* Header and Navbar */
+header {
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+  position: fixed; /* Make header fixed */
+  top: 0; /* Stick it to the top */
+  left: 0;
+  z-index: 1000; /* Ensure it's on top of other content */
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#header-row {
+  display: flex; /* Makes the items align in a row */
+  justify-content: space-between; /* Space between items (optional, can be adjusted) */
+  align-items: center; /* Vertically center items in the row */
+  padding: 10px; /* Adds padding for spacing */
+}
+
+header #header-row {
+  display: flex; /* Align children in a row */
+  align-items: center; /* Vertically center elements */
+  justify-content: space-between; /* Space out the elements */
+  padding: 0 20px;
+  height: 100%; /* Ensure the header row fills the entire height */
+}
+
+header #overlay {
+  padding: 35px;
+}
+
+header .container {
+  width: 100%; /* Ensure it stretches the full width */
+  padding: 0 20px; /* Optional padding inside the container */
+  box-sizing: border-box; /* Make sure padding is included in the width */
+  margin: 0;
+}
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+    position: relative;
+    top: -10px;
+  }
+  
+  nav {
+    margin: 0;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap for wider boxes */
+  }
+  
+  .nav-item {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    padding: 12px 20px; /* Increased padding for wider box */
+    border-radius: 12px;
+    border: 2px solid white; /* Ensure border is applied on all sides */
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    background-color: #00bcd4;
+    color: white;
+    border-color: white;
+  }
+  
+  .nav-item.active {
+    background-color: #1abc9c;
+  }
+  /* Main Content */
+  main {
+    margin-top: 12vh; /* This creates the desired space between header and main */
+    padding: 0 10px 30px;
+    text-align: center;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f4f6f7;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  form label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fff;
+    width: 100%;
+  }
+  
+  form button {
+    padding: 12px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  form button:hover {
+    background-color: #16a085;
+  }
+  
+  /*Footer */
+  footer {
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #34495e;
+    color: white;
+    z-index: 9999; /* Ensure it's above all content */
+  }
+  
+  /* Home Page Styling */
+  .flex-container-home {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .text-content-home {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fff;
+    width: 100%;
+    font-family: inherit;
+  }
+
+  form input:focus,
+  form textarea:focus {
+    outline: none; /* Remove default outline */
+    border: 1px solid #999; /* Optional: keep a thin border inside */
+    box-shadow: 0 0 0 3px rgba(255, 223, 0, 0.8); /* Yellow glow outside the box */
+  }
+
+  form input, form textarea {
+    caret-color: #000;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    animation: blink-caret 1s step-end infinite;
+  }
+  
+.chrome-browser input,
+.chrome-browser textarea {
+  caret-color: #2196F3; /* Material Blue */
+}
+
+  /* Optional: Define blinking animation */
+  @keyframes blink-caret {
+    0%, 100% {
+      caret-color: transparent;
+    }
+    50% {
+      caret-color: #000;
+    }
+  }
+  @media screen and (min-width: 400px) {
+    .text-content-home {
+        margin-left: 140px;
+    }
+  }
+
+  .text-content-home p:first-of-type {
+    margin-top: 30px;
+  }
+  
+  .home-intro h2 {
+    font-size: 30px;
+  }
+  
+  .home-intro p {
+    font-size: 20px;
+  }
+  
+  .home-intro li {
+    font-size: 14px;
+  }
+  
+  .text-content-home h2 {
+    font-size: 35px;
+    margin-bottom: 0px;
+  }
+  
+  .text-content-home p {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  
+  .text-content-home li {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .image-column-home {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 0;
+    max-width: 400px;
+  }
+  
+  .image-column-home img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  @media screen and (max-width: 1100px) {
+    .image-column-home {
+        display: none;
+    }
+  }
+  
+  /* About Section Styling */
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center the content horizontally */
+    text-align: center;
+    padding: 20px 5%;
+    margin-top: 20px;
+  }
+  
+  .about-image {
+    width: 90%; /* responsive width */
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .about-text {
+    width: 90%;
+    text-align: left;
+    padding-left: 5%;
+  }
+  
+  .about-text ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-text li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  /* Link Styling */
+  .flex-container-home a, .about-container a, .post_box a {
+    color: #2c3e50;
+    text-decoration: underline;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .flex-container-home a:hover, .about-container a:hover, .post_box a:hover {
+    border-color: #1abc9c;
+    color: #1abc9c;
+  }
+  
+  /* List Styling */
+  .no-bullets {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .no-bullets li {
+    margin-bottom: 12px;
+  }
+  
+  /* Contact Section */
+  .contact-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+  
+  #ebook_cta h2 {
+    font-size: 40px; /* or try 18px, 20px, etc. */
+    margin-bottom: 40px;
+  }
+
+
+  #ebook_cta p {
+    font-size: 30px; /* or try 18px, 20px, etc. */
+  }
+
+  #email-newsletter {
+    margin-top: 50px;
+  }
+
+  #ebook_cta a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 25px; /* or adjust as needed */
+  }
+
+  .contact-links p {
+    margin: 0;
+  }
+  
+  .contact-links a, .email-container {
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 10px 15px;
+    border: 2px solid #2c3e50;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .contact-us {
+    margin-top: 50px;
+  }
+  
+  .contact-us h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-us h2:last-of-type {
+    margin-bottom: 10px;
+  }
+  
+  .contact-us form {
+    margin-top: 20px;
+  }
+  
+  .signup-text {
+    font-size: 20px;
+  }
+  
+  /* Section Spacing */
+  section h2 {
+    margin-bottom: 20px;
+  }
+  
+  section p:first-of-type {
+    margin-bottom: 15px;
+  }
+  
+  section p:last-of-type {
+    margin-bottom: 20px;
+  }
+  
+  /* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-list li {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -15px;
+  }
+
+  .nav-list {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-item {
+    padding: 15px 30px; /* Increased padding for wider boxes */
+    font-size: 1.2em;
+    margin: 5px 0; /* Add margin between items */
+    display: block;
+    width: auto; /* Allow the item to take only as much space as needed */
+    max-width: 400px; /* Restrict the width to a maximum value */
+    text-align: center; /* Ensure the text is centered */
+    border: 2px solid white; /* Apply border to all sides */
+  }
+
+  .nav-item:first-child {
+    border-top: 2px solid white; /* Ensure top border is visible */
+  }
+
+  .nav-item a {
+    color: white;
+    text-decoration: none;
+    display: block; /* Make the entire area clickable */
+  }
+
+  .nav-item:hover {
+    background-color: #1abc9c; /* Highlight on hover */
+  }
+}
+
+  #current_week_blog_posts {
+    text-align: left;
+}
+
+.post_1_current_week {
+    margin-left: 440px;
+}
+
+.post_box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f4f6f7;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 400px); /* Adjusting to account for 200px padding on each side */
+    margin: 0 auto;
+}
+
+.post {
+    margin-top: -30px;
+}
+
+/* General paragraph spacing */
+.post p {
+    margin: 10px 0; /* Ensures equal spacing above and below paragraphs */
+}
+
+/* Adjusting spacing for list items and making sure it matches the paragraph spacing */
+.post ul {
+    margin-top: 10px; /* More space before list items */
+    margin-bottom: 10px; /* More space after list items */
+    padding-left: 20px; /* Indentation for list items */
+}
+
+.post ul li {
+    margin-bottom: 10px; /* Ensures equal space between list items, matching paragraph spacing */
+}
+
+/* Ensure no extra space between list and subsequent elements */
+.post ul + p {
+    margin-top: 10px; /* Adjusts margin between a list and the following paragraph */
+}
+
+/* Consistent space between headings and paragraphs */
+.post h2, .post p {
+    margin-bottom: 5px; /* Ensures consistent space between headings and paragraphs */
+}
+
+/* Custom class for Clinical Takeaways paragraph */
+.clinical_takeaways {
+    margin-bottom: 0px !important; /* Adjusts space between paragraph and list */
+}
+
+/* Custom class for Clinical Takeaways list */
+.clinical_takeaways_list {
+    margin-top: 0; /* Removes extra space between the paragraph and the list */
+    padding-left: 20px; /* Optional: Indentation for the list items */
+    margin-bottom: 5px; /* Optional: Adjust space after the list */
+}
+
+/* Custom spacing for list items */
+.clinical_takeaways_list li {
+    margin-bottom: 5px; /* Adjust space between list items */
+}
+
+/* Hamburger Button Styles */
+.hamburger {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  z-index: 1001;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.hamburger .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #2c3e50;
+  border-radius: 2px;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2c3e50;
+  position: fixed;
+  left: 0;
+  top: 35px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 900;
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s;
+  margin-top: 30px;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu li {
+  margin: 40px 0;
+}
+
+.mobile-menu a {
+  color: white;
+  font-size: 1.8em;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  background-color: #00bcd4;
+}
+
+/* Responsive Visibility */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Dropdown container */
+#country-dropdown-container {
+  position: relative; /* Ensure it is positioned relative to the container */
+  width: 100%; /* Ensure it fills the container width */
+}
+
+
+/* Logo code */
+.logo-container {
+  position: fixed; /* Make it stick to a specific spot */
+  top: 10px;
+  left: 10px; /* Top left corner */
+  display: flex; /* Aligns image and title horizontally */
+  align-items: center; /* Vertically centers image and text */
+  z-index: 1000; /* Just under the hamburger if needed */
+  margin-top: 5px;
+}
+
+.logo-image {
+  width: 40px; /* Size of the logo image */
+  height: auto; /* Maintains aspect ratio */
+  margin-right: 10px; /* Adds space between the image and text */
+}
+
+.site-title {
+  font-size: 20px; /* Font size of the title */
+  color: black; 
+}

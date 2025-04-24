@@ -631,6 +631,7 @@ header .container {
   align-items: center; /* Vertically centers image and text */
   z-index: 1000; /* Just under the hamburger if needed */
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .logo-image {

@@ -223,7 +223,8 @@ header .container {
   }
   @media screen and (min-width: 400px) {
     .text-content-home {
-        margin-left: 140px;
+      margin-left: 20%;
+      margin-right: 20%;
     }
   }
 

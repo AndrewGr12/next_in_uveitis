@@ -1,3 +1,4 @@
+/*main.js*/
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('open');
@@ -18,3 +19,20 @@ if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
     document.body.classList.add('chrome-browser');
   }
 
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+  
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+    }).then(response => {
+      if (response.ok) {
+        alert('Thanks for subscribing!');
+        form.reset();
+      } else {
+        alert('There was a problem. Try again later.');
+      }
+    });
+  });

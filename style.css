@@ -39,7 +39,7 @@ header #header-row {
   display: flex; /* Align children in a row */
   align-items: center; /* Vertically center elements */
   justify-content: space-between; /* Space out the elements */
-  padding: 0 20px;
+  padding: 0 40px;
   height: 100%; /* Ensure the header row fills the entire height */
 }
 
@@ -147,21 +147,7 @@ header .container {
   form button:hover {
     background-color: #16a085;
   }
-  
-  /*Footer */
-  footer {
-    font-family: 'Montserrat', sans-serif;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    background-color: #34495e;
-    color: white;
-    z-index: 9999; /* Ensure it's above all content */
-  }
-  
+    
   /* Home Page Styling */
   .flex-container-home {
     display: flex;

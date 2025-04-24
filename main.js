@@ -15,26 +15,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Handle form submission
-document.querySelector('#newsletter-form').addEventListener('submit', function (e) {
-  e.preventDefault(); // Stop the form from doing a normal submit
+document.addEventListener('DOMContentLoaded', function () {
+  const menuLinks = document.querySelectorAll('#mobileMenu a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      document.getElementById('mobileMenu').classList.remove('open');
+    });
+  });
 
-  const form = e.target;
-  const data = new FormData(form);
+  // Handle form submission
+  const form = document.querySelector('#newsletter-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
 
-  fetch(form.action, {
-    method: 'POST',
-    body: data,
-  }).then(response => response.text())
+    const data = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbwOj7yTC1g7F9XATs4-LI4y8oXF3aZTDzJykgv0rlFUIjQ8nbK1Q6RWopvI-O6DoyzDhA/exec', {
+      method: 'POST',
+      body: data,
+    })
+    .then(response => response.text())
     .then(text => {
       if (text.includes('Success')) {
-        // Show your custom message with a fade-in
         const successDiv = document.getElementById('success-message');
-        successDiv.classList.add('show');
+        successDiv.classList.add('show'); // 👈 replaces style.display = 'block'
         form.reset();
       } else {
         alert('There was a problem. Try again later.');
       }
-    }).catch(error => {
+    })
+    .catch(error => {
       alert('Error: ' + error.message);
     });
+  });
 });

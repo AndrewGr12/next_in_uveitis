@@ -441,6 +441,16 @@ header .container {
     border: 2px solid white; /* Apply border to all sides */
   }
 
+  #successMessage {
+    display: none; /* Hidden by default */
+    padding: 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
   .nav-item:first-child {
     border-top: 2px solid white; /* Ensure top border is visible */
   }

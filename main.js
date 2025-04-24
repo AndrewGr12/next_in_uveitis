@@ -14,6 +14,7 @@ function toggleMenu() {
     });
   });
 
+/*
 // Add this inside a <script> tag or in your JS file
 if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
     document.body.classList.add('chrome-browser');
@@ -36,3 +37,4 @@ if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
       }
     });
   });
+  */

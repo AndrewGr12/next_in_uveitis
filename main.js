@@ -1,20 +1,10 @@
-/* main.js */
+// Toggle mobile menu
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
   menu.classList.toggle('open');
 }
 
 // Close menu when a link is clicked
-document.addEventListener('DOMContentLoaded', function () {
-  const menuLinks = document.querySelectorAll('#mobileMenu a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', function () {
-      document.getElementById('mobileMenu').classList.remove('open');
-    });
-  });
-});
-
-// Handle form submission
 document.addEventListener('DOMContentLoaded', function () {
   const menuLinks = document.querySelectorAll('#mobileMenu a');
   menuLinks.forEach(link => {
@@ -38,7 +28,13 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(text => {
       if (text.includes('Success')) {
         const successDiv = document.getElementById('success-message');
-        successDiv.classList.add('show'); // 👈 replaces style.display = 'block'
+        successDiv.classList.add('show'); // Add 'show' class for success message
+
+        // Optionally hide after a few seconds
+        setTimeout(function() {
+          successDiv.classList.remove('show'); // Hide the success message after 3 seconds
+        }, 3000);
+
         form.reset();
       } else {
         alert('There was a problem. Try again later.');
@@ -48,15 +44,4 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Error: ' + error.message);
     });
   });
-});
-
-document.getElementById('subscribeButton').addEventListener('click', function(e) {
-  e.preventDefault();  // Prevent the default form submission
-  // Show the success message
-  document.getElementById('success-message').style.display = 'block';
-
-  // Optionally, you can hide the message after a few seconds
-  setTimeout(function() {
-    document.getElementById('success-message').style.display = 'none';
-  }, 3000); // Hide after 3 seconds
 });

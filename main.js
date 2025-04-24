@@ -28,16 +28,17 @@ if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
       const lastName = document.getElementById("last-name").value;
       const email = document.getElementById("email").value;
   
+      // Ensure POST request is being sent with proper headers and body format
       fetch("https://script.google.com/macros/s/AKfycbyl4RdFZsJEud_nwesQ4X835KfxhTe9dIccUMNVxRGiLeNFVKlnM_Q4g-XO6HLVJDEBhw/exec", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json" // Ensure this is set correctly
         },
         body: JSON.stringify({
           firstName: firstName,
           lastName: lastName,
           email: email
-        })
+        }) // Make sure data is stringified
       })
         .then((res) => res.text())
         .then((response) => {

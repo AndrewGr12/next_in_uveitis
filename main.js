@@ -1,3 +1,8 @@
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('open');
+}
+
 // Close menu when a link is clicked
 document.addEventListener('DOMContentLoaded', function () {
   const menuLinks = document.querySelectorAll('#mobileMenu a');

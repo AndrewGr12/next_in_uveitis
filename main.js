@@ -1,4 +1,4 @@
-/*main.js*/
+/* main.js */
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
   menu.classList.toggle('open');
@@ -8,15 +8,16 @@ function toggleMenu() {
 document.addEventListener('DOMContentLoaded', function () {
   const menuLinks = document.querySelectorAll('#mobileMenu a');
   menuLinks.forEach(link => {
-      link.addEventListener('click', function () {
-          document.getElementById('mobileMenu').classList.remove('open');
-      });
+    link.addEventListener('click', function () {
+      document.getElementById('mobileMenu').classList.remove('open');
+    });
   });
 });
 
 // Handle form submission
-document.querySelector('#newsletter-form').addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevent default form submission
+// Handle form submission
+document.querySelector('#newsletter-form').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent default form submission behavior (i.e., navigating to the success page)
 
   const form = e.target;
   const data = new FormData(form); // Collect form data

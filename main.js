@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const data = new FormData(contactForm);
 
     // Replace with the URL of your Google Apps Script
-    fetch('https://script.google.com/macros/s/AKfycbwVEIRRG-yinp79Vf2ZQtCW0QDF3qybkgJRfUBV7AoFUKNesjb6vzXigGom4SBy_LI/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzKksDBgMkaTXfNjxQKXQmOc3Twn2b8MrbTdw2rLImfu7OANRB4bBEsDK_s6g4TkoAuRg/exec', {
       method: 'POST',
       body: data,
     })

@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(text => {
       if (text.includes('Success')) {
         const successDiv = document.getElementById('success-message');
-        successDiv.classList.add('show'); // Add 'show' class for success message
+        successDiv.classList.add('show'); // Show success message
 
         // Optionally hide after a few seconds
         setTimeout(function() {
-          successDiv.classList.remove('show'); // Hide the success message after 3 seconds
+          successDiv.classList.remove('show'); // Hide success message after 3 seconds
         }, 3000);
 
         form.reset();

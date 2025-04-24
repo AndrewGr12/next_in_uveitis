@@ -20,34 +20,41 @@ if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
 
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("newsletter-form");
-  
+    
     form.addEventListener("submit", function (e) {
       e.preventDefault(); // Prevent traditional form submission
-  
+      
       const firstName = document.getElementById("first-name").value;
       const lastName = document.getElementById("last-name").value;
       const email = document.getElementById("email").value;
-  
-      // Ensure POST request is being sent with proper headers and body format
-      fetch("https://script.google.com/macros/s/AKfycbyl4RdFZsJEud_nwesQ4X835KfxhTe9dIccUMNVxRGiLeNFVKlnM_Q4g-XO6HLVJDEBhw/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json" // Ensure this is set correctly
-        },
-        body: JSON.stringify({
-          firstName: firstName,
-          lastName: lastName,
-          email: email
-        }) // Make sure data is stringified
+      
+      // Show loading indicator
+      const submitButton = form.querySelector("button[type='submit']");
+      const originalText = submitButton.innerHTML;
+      submitButton.innerHTML = "Submitting...";
+      submitButton.disabled = true;
+      
+      // Create URL with form data as query parameters
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyl4RdFZsJEud_nwesQ4X835KfxhTe9dIccUMNVxRGiLeNFVKlnM_Q4g-XO6HLVJDEBhw/exec";
+      const url = `${scriptURL}?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&email=${encodeURIComponent(email)}`;
+      
+      // Use fetch with GET method instead
+      fetch(url, {
+        method: "GET",
+        mode: "no-cors"
       })
-        .then((res) => res.text())
-        .then((response) => {
-          alert("✅ Thanks for subscribing!");
-          form.reset(); // Clear form
-        })
-        .catch((err) => {
-          console.error("Submission error", err);
-          alert("❌ Something went wrong. Please try again.");
-        });
+      .then(() => {
+        alert("✅ Thanks for subscribing!");
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("Submission error", err);
+        alert("❌ Something went wrong. Please try again.");
+      })
+      .finally(() => {
+        // Reset button state
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      });
     });
   });

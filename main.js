@@ -58,10 +58,9 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(text => {
       if (text.includes('Success')) {
         // Show success message
-        const successMessage = document.createElement('div');
-        successMessage.classList.add('success-message');
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
         successMessage.innerHTML = 'Message sent! ✅';
-        document.body.appendChild(successMessage);
 
         // Reset form after success
         contactForm.reset();

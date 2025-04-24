@@ -1,11 +1,5 @@
 // Close menu when a link is clicked
 document.addEventListener('DOMContentLoaded', function () {
-    // Make logo-container redirect to index.html
-    const logoContainer = document.querySelector('.logo-container');
-    logoContainer.addEventListener('click', function () {
-      window.location.href = 'index.html';
-    });
-
   const menuLinks = document.querySelectorAll('#mobileMenu a');
   menuLinks.forEach(link => {
     link.addEventListener('click', function () {

@@ -1,6 +1,7 @@
 /* Force vertical scrollbar and reset */
 html {
     overflow-y: scroll;
+    scroll-behavior: smooth;
   }
   
   * {

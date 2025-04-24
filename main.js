@@ -23,7 +23,7 @@ document.querySelector('#newsletter-form').addEventListener('submit', function (
 
   console.log("Form submitted, sending data...");
 
-  fetch(form.action, {
+  fetch('https://script.google.com/macros/s/AKfycbwOj7yTC1g7F9XATs4-LI4y8oXF3aZTDzJykgv0rlFUIjQ8nbK1Q6RWopvI-O6DoyzDhA/exec', {
     method: 'POST',
     body: data,
   }).then(response => response.text()) // Parse the response as text

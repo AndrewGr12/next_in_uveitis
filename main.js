@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', function () {
+  // Existing code...
+
+  // Make logo-container redirect to index.html
+  const logoContainer = document.querySelector('.logo-container');
+  logoContainer.addEventListener('click', function () {
+    window.location.href = 'index.html';
+  });
+
 // Toggle mobile menu
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');

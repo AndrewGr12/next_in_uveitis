@@ -1,0 +1,26 @@
+{
+  "name": "next_in_uveitis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewGr12/next_in_uveitis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewGr12/next_in_uveitis/issues"
+  },
+  "homepage": "https://github.com/AndrewGr12/next_in_uveitis#readme",
+  "dependencies": {
+    "firebase": "^11.6.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

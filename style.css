@@ -179,9 +179,8 @@ header .container {
   }
   
   .text-content-home {
-    flex: 1;
-    padding: 20px;
-    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
   }
   
   form textarea {

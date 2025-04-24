@@ -227,17 +227,6 @@ header .container {
     }
   }
 
-  #success-message {
-    display: none;
-    color: green;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
-  }
-  #success-message.show {
-    display: block;
-    opacity: 1;
-  }
-
   .text-content-home p:first-of-type {
     margin-top: 30px;
   }

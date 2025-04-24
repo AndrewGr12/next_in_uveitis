@@ -14,21 +14,25 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Submit the form and display a success message
-document.querySelector('form').addEventListener('submit', function(e) {
-  e.preventDefault();
+// Handle form submission
+document.querySelector('#newsletter-form').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent default form submission
+
   const form = e.target;
-  const data = new FormData(form);
+  const data = new FormData(form); // Collect form data
 
   fetch(form.action, {
     method: 'POST',
     body: data,
-  }).then(response => {
-    if (response.ok) {
-      document.getElementById("success-message").style.display = "block";  // Show success message
-      form.reset();  // Optionally reset the form
-    } else {
-      alert('There was a problem. Try again later.');
-    }
-  });
+  }).then(response => response.text()) // Parse the response as text
+    .then(text => {
+      if (text.includes('Success')) { // Check if the response contains 'Success'
+        document.getElementById("success-message").style.display = "block"; // Show success message
+        form.reset(); // Optionally reset the form after submission
+      } else {
+        alert('There was a problem. Try again later.');
+      }
+    }).catch(error => {
+      alert('Error: ' + error.message); // Catch any error
+    });
 });

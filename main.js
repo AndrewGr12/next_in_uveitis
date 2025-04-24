@@ -15,12 +15,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Handle form submission
-// Handle form submission
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('#newsletter-form');
-  const iframe = document.getElementById('iframe');
-  const successMessage = document.getElementById('success-message');
+  const menuLinks = document.querySelectorAll('#mobileMenu a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      document.getElementById('mobileMenu').classList.remove('open');
+    });
+  });
 
+  // Handle form submission
+  const form = document.querySelector('#newsletter-form');
   form.addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent default form submission
 
@@ -32,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(response => response.text())
     .then(text => {
-      // Check the response for success or error
       if (text.includes('Success')) {
-        // Show the success message in the parent page
-        successMessage.style.display = 'block'; // 👈 Show success message
+        const successDiv = document.getElementById('success-message');
+        successDiv.classList.add('show'); // 👈 replaces style.display = 'block'
+        form.reset();
       } else {
         alert('There was a problem. Try again later.');
       }
@@ -44,14 +48,4 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Error: ' + error.message);
     });
   });
-
-  // Listen for the iframe load event
-  iframe.onload = function() {
-    const iframeContent = iframe.contentWindow.document.body.innerText;
-    if (iframeContent === "Success") {
-      successMessage.style.display = 'block'; // Display success message
-    } else {
-      successMessage.style.display = 'none'; // Hide success message on error
-    }
-  };
 });

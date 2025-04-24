@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (text.includes('Success')) {
         // Show success message
         document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('successMessage').innerHTML = 'Subscribed! ✅ 🎉';
+        document.getElementById('successMessage').innerHTML = 'Subscribed! ✅';
 
         // Reset form after success
         form.reset();

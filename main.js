@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(text => {
       if (text.includes('Success')) {
         // Show success message
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('successMessage').innerHTML = 'Subscribed! ✅';
+        document.getElementById('newslettersuccessMessage').style.display = 'block';
+        document.getElementById('newslettersuccessMessage').innerHTML = 'Subscribed! ✅';
 
         // Reset form after success
         newsletterForm.reset();
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(text => {
       if (text.includes('Success')) {
         // Show success message
-        const successMessage = document.getElementById('successMessage');
+        const successMessage = document.getElementById('signupsuccessMessage');
         successMessage.style.display = 'block';
         successMessage.innerHTML = 'Message sent! ✅';
 

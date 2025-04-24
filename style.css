@@ -173,14 +173,17 @@ header .container {
   .flex-container-home {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    /*justify-content: center*/;
     gap: 40px;
     margin-top: 20px;
   }
   
   .text-content-home {
-    margin-left: 20%;
-    margin-right: 20%;
+    /*margin-left: 20%;
+    margin-right: 20%;*/
+    max-width: 60%;
+    margin: 0 auto;
+
   }
   
   form textarea {

@@ -21,15 +21,16 @@ document.querySelector('#newsletter-form').addEventListener('submit', function (
   const form = e.target;
   const data = new FormData(form);
 
-  fetch('https://script.google.com/macros/s/AKfycbwOj7yTC1g7F9XATs4-LI4y8oXF3aZTDzJykgv0rlFUIjQ8nbK1Q6RWopvI-O6DoyzDhA/exec', {
+  fetch(form.action, {
     method: 'POST',
     body: data,
   }).then(response => response.text())
     .then(text => {
       if (text.includes('Success')) {
-        // Instead of showing success on the same page, open success page in a new tab
-        window.open('https://script.google.com/macros/s/AKfycbwOj7yTC1g7F9XATs4-LI4y8oXF3aZTDzJykgv0rlFUIjQ8nbK1Q6RWopvI-O6DoyzDhA/exec', '_blank');
-        form.reset(); // Optionally reset the form
+        // Show your custom message with a fade-in
+        const successDiv = document.getElementById('success-message');
+        successDiv.classList.add('show');
+        form.reset();
       } else {
         alert('There was a problem. Try again later.');
       }

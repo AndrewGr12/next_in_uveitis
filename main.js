@@ -49,3 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+document.getElementById('subscribeButton').addEventListener('click', function(e) {
+  e.preventDefault();  // Prevent the default form submission
+  // Show the success message
+  document.getElementById('success-message').style.display = 'block';
+
+  // Optionally, you can hide the message after a few seconds
+  setTimeout(function() {
+    document.getElementById('success-message').style.display = 'none';
+  }, 3000); // Hide after 3 seconds
+});

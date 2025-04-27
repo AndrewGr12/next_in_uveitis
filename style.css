@@ -54,6 +54,17 @@ header .container {
   box-sizing: border-box; /* Make sure padding is included in the width */
   margin: 0;
 }
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2%;
+  background-color: black;
+  z-index: 1001; /* One level above the header’s content */
+} 
   
   h1 {
     font-size: 2.5em;
@@ -636,25 +647,6 @@ header .container {
   color: black; 
 }
 
-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2%;
-  background-color: black;
-  z-index: 1001; /* One level above the header’s content */
-} 
-
-/*Footer*/
-.spacer-footer {
-  height: 0vh;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-
 /* Hide desktop nav by default */
 .desktop-nav {
   display: none;
@@ -715,3 +707,65 @@ header::after {
     color: black;
   }
 }
+
+.footer {
+  width: 100%;
+  background-color: white;  
+  color: black;  
+  font-family: 'Merriweather', serif;  
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  padding: 10px 0;
+  z-index: 10000;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4%; /* Upper 10% of the footer height */
+  background-color: black;
+}
+
+.footer-text {
+  font-size: 14px; /* Adjust font size if necessary */
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Footer Styling 
+.footer {
+  width: 100%;
+  background-color: white;  
+  color: black;  
+  font-family: 'Merriweather', serif;  
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  padding: 10px 0;
+  z-index: 10000;
+}
+
+.footer .footer-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.9em;
+  flex-wrap: nowrap;  
+}
+
+.footer .footer-copyright {
+  font-size: 0.9em;
+}
+
+.footer-copyright,
+.footer-text {
+  margin: 0;
+}
+*/

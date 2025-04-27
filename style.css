@@ -3,7 +3,7 @@ html {
     overflow-y: scroll;
     scroll-behavior: smooth;
   }
-  
+
   * {
     margin: 0;
     padding: 0;
@@ -98,6 +98,7 @@ header .container {
   /* Main Content */
   main {
     margin-top: 15vh; /* This creates the desired space between header and main */
+    margin-bottom: 5vh;
     padding: 0 10px 30px;
     text-align: center;
   }
@@ -330,17 +331,29 @@ header .container {
   
   #ebook_cta {
     max-width: 80%;
-    /*max-height: 80%*/;
     margin: 0 auto;
   }
-
+  
   #ebook_cta h2 {
-    font-size: 40px; /* or try 18px, 20px, etc. */
-    margin-bottom: 40px;
+    font-size: 40px;
+    margin-bottom: 5vh; /* space after h2 */
   }
-
+  
   #ebook_cta p {
-    font-size: 30px; /* or try 18px, 20px, etc. */
+    font-size: 30px;
+    margin-bottom: 5vh; /* same space after p */
+  }
+  
+  #ebook_cta a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    transition: background-color 0.3s ease;
   }
 
   #email-newsletter {
@@ -362,19 +375,6 @@ header .container {
   width: 100%;  /* ensures fields align to form width */
   box-sizing: border-box;
 }
-
-  #ebook_cta a {
-    display: inline-block;
-    margin-top: 15vh;
-    padding: 0.75rem 1.5rem;
-    background-color: #1abc9c;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 25px; /* or adjust as needed */
-  }
-
   .contact-links p {
     margin: 0;
   }

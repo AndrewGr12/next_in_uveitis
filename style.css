@@ -375,6 +375,7 @@ header::after {
     padding-right: 10%;
     /*margin-right: 30%;*/
     max-width: 1000px;
+    text-align: left;
   }
   
   #weekly-updates h1 {

@@ -216,20 +216,25 @@ header::after {
       caret-color: #000;
     }
   }
+ 
+@media screen and (max-width: 300px) {
+  .about-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start; 
+    justify-content: center; 
+    width: 100%;
+  }
   
-  @media screen and (min-width: 250px) {
-    .about-container {
-      flex-direction: row; /* Changes layout to row on larger screens */
-      align-items: flex-start; /* Aligns content to the top of the container */
-      justify-content: flex-start;
-    }
+  .about-image {
+    width: 40%; 
+    margin: 0 10px; 
+  }
   
-    .about-image {
-      margin-right: 20px; /* Adds space between image and text */
-    }
-  
-    .about-text {
-      max-width: 400px; /* Optional: limit the width of the text*/
+  .about-text {
+    width: 55%; 
+    text-align: left;
+    padding: 0 10px; 
   }
 }
 
@@ -298,7 +303,7 @@ header::after {
   
   .about-image {
     width: 80%; /* responsive width */
-    max-width: 250px;
+    max-width: 300px;
     max-height: 80%;
     height: auto;
     border-radius: 12px;
@@ -308,10 +313,13 @@ header::after {
   }
   
   .about-text {
-    width: 90%;
+    width: 100%;
     text-align: left;
-    padding-left: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin: auto;
     margin-top: 20px;
+    max-width: 350px;
   }
   
   .about-text ul {
@@ -757,35 +765,3 @@ header::after {
 }
 
 
-/* Footer Styling 
-.footer {
-  width: 100%;
-  background-color: white;  
-  color: black;  
-  font-family: 'Merriweather', serif;  
-  text-align: center;
-  left: 0;
-  bottom: 0;
-  position: fixed;
-  padding: 10px 0;
-  z-index: 10000;
-}
-
-.footer .footer-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  font-size: 0.9em;
-  flex-wrap: nowrap;  
-}
-
-.footer .footer-copyright {
-  font-size: 0.9em;
-}
-
-.footer-copyright,
-.footer-text {
-  margin: 0;
-}
-*/

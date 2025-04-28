@@ -379,9 +379,12 @@ header::after {
   }
   
   #weekly-updates h1 {
-    font-size: 2rem; /* Adjust size as needed */
+    font-size: 30px; /* Adjust size as needed */
     margin-bottom: 1rem;
     text-align: left; /* Ensures the heading is left-aligned */
+    border-top: 2px solid #333; /* Dark gray line above */
+    border-bottom: 2px solid #333; /* Dark gray line below */
+    padding: 10px 0; /* Adjust padding for spacing */
   }
   
   .update-article {
@@ -393,12 +396,12 @@ header::after {
   }
   
   .update-article h2 {
-    font-size: 1.5rem;
+    font-size: 25px;
     margin-bottom: 1rem;
   }
   
   .update-article p {
-    font-size: 15px;
+    font-size: 20px;
     margin: 0;
     padding: 0;
     margin-bottom: 0;
@@ -410,14 +413,20 @@ header::after {
   margin-bottom: 0; /* Ensure first paragraph has no special margin */
 }
 
+.update-article p:last-of-type {
+  margin-bottom: 0;
+}
+
 /* Add a specific rule to handle paragraphs that follow other paragraphs */
 .update-article p + p {
   margin-top: 0; /* Consistent spacing between consecutive paragraphs */
 }
   
   .update-article a {
+    font-size: 20px;
     color: #007bff;
     text-decoration: none;
+
   }
   
   .update-article a:hover {

@@ -523,6 +523,10 @@ header::after {
     -webkit-line-clamp: unset !important;
   }
 
+  .expandable {
+    transition: all 0.3s ease-in-out;
+  }
+
   /* Ensure the 'read more' button is visible again on larger screens */
    .truncate-text .read-more {
      display: none;

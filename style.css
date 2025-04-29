@@ -485,34 +485,51 @@ header::after {
     text-decoration: underline;
   }
 
- /* 
-  #ebook_cta {
-    max-width: 80%;
-    margin: 0 auto;
+  .truncate-text .expandable {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   
-  #ebook_cta h2 {
-    font-size: 40px;
-    margin-bottom: 5vh;
+  /* When the screen width is 800px or less, apply the truncation effect */
+@media (max-width: 800px) {
+  .truncate-text .expandable {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  
-  #ebook_cta p {
-    font-size: 30px;
-    margin-bottom: 5vh; 
+
+  .expanded {
+    -webkit-line-clamp: unset !important;
   }
-  
-  #ebook_cta a {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #1abc9c;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 25px;
-    transition: background-color 0.3s ease;
+
+    /* Hide the 'read more' button on smaller screens */
+    .truncate-text .read-more {
+      display: inline;
+    }
+
+}
+
+/* When screen width is greater than 800px, make sure full text is visible */
+@media (min-width: 801px) {
+  .truncate-text .expandable {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
   }
- */   
+
+  .expanded {
+    -webkit-line-clamp: unset !important;
+  }
+
+  /* Ensure the 'read more' button is visible again on larger screens */
+   .truncate-text .read-more {
+     display: none;
+   }
+
+}
 
   #email-newsletter {
     margin-top: 15vh;

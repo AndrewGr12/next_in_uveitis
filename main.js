@@ -127,5 +127,21 @@ document.addEventListener('DOMContentLoaded', function () {
   fadeElements.forEach(element => {
     observer.observe(element);
   });
+
+  // Select all the 'read more' buttons
+  const readMoreButtons = document.querySelectorAll('.read-more');
+
+  readMoreButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      const truncateTextDiv = event.target.closest('.truncate-text');
+      const expandableContent = truncateTextDiv.querySelector('.expandable');
+
+      // Expand the content by adding the 'expanded' class
+      expandableContent.classList.add('expanded');
+
+      // Hide the 'read more' button after it's clicked
+      event.target.style.display = 'none';
+    });
+  });
 });
 

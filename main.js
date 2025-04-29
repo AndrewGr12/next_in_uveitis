@@ -102,4 +102,31 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('active');
     }
   });
+
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  // Options for the intersection observer
+  const options = {
+    threshold: 0.5, // Element must be 50% visible
+  };
+
+  // Callback function to handle when element comes into view
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Apply staggered delay by setting a delay based on the index
+        entry.target.style.transitionDelay = `${index * 0.2}s`; // Increase delay for later elements
+
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing once element has entered the viewport
+      }
+    });
+  }, options);
+
+  // Observe each fade-in element
+  fadeElements.forEach(element => {
+    observer.observe(element);
+  });
+  
 });
+

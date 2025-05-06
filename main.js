@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (text.includes('Success')) {
           // Show success message
           document.getElementById('newslettersuccessMessage').style.display = 'block';
-          document.getElementById('newslettersuccessMessage').innerHTML = 'Subscribed! ✅';
+          document.getElementById('newslettersuccessMessage').innerHTML = 'Subscribed! ✅ You will receive an e-mail confirmation shortly';
 
           // Reset form after success
           newsletterForm.reset();
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (text.includes('Success')) {
           const successMessage = document.getElementById('signupsuccessMessage');
           successMessage.style.display = 'block';
-          successMessage.innerHTML = 'Message sent! ✅';
+          successMessage.innerHTML = 'Message sent! ✅ You will receive an e-mail confirmation shortly!';
           contactForm.reset();
         } else {
           alert('There was a problem. Try again later.');

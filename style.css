@@ -48,6 +48,21 @@ header {
   overflow: visible;
 }
 
+.subscriber-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #004d66;
+  color: white;
+  padding: 0.6em 1em;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  z-index: 1000;
+  margin: 0;
+}
+
 header #header-row {
   display: flex; /* Align children in a row */
   align-items: center; /* Vertically center elements */

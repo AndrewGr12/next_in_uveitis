@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const data = new FormData(contactForm);
 
-      fetch('https://script.google.com/macros/s/AKfycbzKksDBgMkaTXfNjxQKXQmOc3Twn2b8MrbTdw2rLImfu7OANRB4bBEsDK_s6g4TkoAuRg/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbxyJ-P3gVpUwrx0wPvHHPbaObGtHnpC9KzAhILazRNJrHCvqqOUsflIJScHTkB9TP7QFQ/exec', {
         method: 'POST',
         body: data,
       })

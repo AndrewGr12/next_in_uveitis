@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const data = new FormData(newsletterForm);
 
-      fetch('https://script.google.com/macros/s/AKfycbxEilNJWmZuafydk4ahN22XJl2T3S7PC-2GjWtUizib0HkWoTHY43t-UAyILMx0vzA9lw/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyIgM5yOYv57S_7zpijx3w1n9z30eGsNcnyoYQUWFQ7SLcUfplLwAPHwCAVWqJvrDwePw/exec', {
         method: 'POST',
         body: data,
       })

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const data = new FormData(newsletterForm);
 
-      fetch('https://script.google.com/macros/s/AKfycbyIgM5yOYv57S_7zpijx3w1n9z30eGsNcnyoYQUWFQ7SLcUfplLwAPHwCAVWqJvrDwePw/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbxhgfcFANZSAfSYPHZXnYwaPEXmzBpgDJW5p-QuxlGP67GgtP4ytjR2JnJ7Y_sq-hLeFA/exec', {
         method: 'POST',
         body: data,
       })
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const data = new FormData(contactForm);
 
-      fetch('https://script.google.com/macros/s/AKfycbxyJ-P3gVpUwrx0wPvHHPbaObGtHnpC9KzAhILazRNJrHCvqqOUsflIJScHTkB9TP7QFQ/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbwhibZFQ4EeMHV4mln_o_uU5SwnQhH-SI_IV51nJO8-HP3YaM8VF8oruZvUbEFIt8nXuQ/exec', {
         method: 'POST',
         body: data,
       })

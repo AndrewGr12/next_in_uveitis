@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (text.includes('Success')) {
           const successMessage = document.getElementById('signupsuccessMessage');
           successMessage.style.display = 'block';
-          successMessage.innerHTML = 'Message sent! ✅ You will receive an e-mail confirmation shortly!';
+          successMessage.innerHTML = 'Message sent! ✅ Our team will reach out soon!';
            // Scroll to the success message
           successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
           contactForm.reset();

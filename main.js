@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+/*
   // Newsletter sign up submission
 const newsletterForm = document.querySelector('#newsletter-form');
 if (newsletterForm) {
@@ -60,6 +61,7 @@ if (newsletterForm) {
     });
   });
 }
+*/
 
 // Contact us submission
 const contactForm = document.querySelector('#contact-form');

@@ -33,6 +33,15 @@ html {
   transform: translateY(0); /* Moves element to normal position */
 }
 
+#newslettersuccessMessage, #signupsuccessMessage {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#newslettersuccessMessage.visible, #signupsuccessMessage.visible {
+  opacity: 1;
+}
+
 /* Header and Navbar */
 header {
   width: 100%;
@@ -230,6 +239,26 @@ header::after {
   form button:hover {
     background-color: #16a085;
   }
+
+  /* Styling for the subscribe button */
+.subscribe-button {
+  background-color: #1abc9c; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Button padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.subscribe-button:hover {
+  background-color: #16a085; /* Darker green on hover */
+}
+
+#calendar-subscription p {
+  margin-bottom: 35px;
+}
     
   /* Home Page Styling */
   .flex-container-home {

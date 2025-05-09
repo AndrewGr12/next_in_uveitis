@@ -16,71 +16,97 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Newsletter sign up submission
-  const newsletterForm = document.querySelector('#newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevent default form submission
+const newsletterForm = document.querySelector('#newsletter-form');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
 
-      const data = new FormData(newsletterForm);
+    const data = new FormData(newsletterForm);
 
-      fetch('https://script.google.com/macros/s/AKfycbxhgfcFANZSAfSYPHZXnYwaPEXmzBpgDJW5p-QuxlGP67GgtP4ytjR2JnJ7Y_sq-hLeFA/exec', {
-        method: 'POST',
-        body: data,
-      })
-      .then(response => response.text())
-      .then(text => {
-        if (text.includes('Success')) {
-          // Show success message
-          document.getElementById('newslettersuccessMessage').style.display = 'block';
-          document.getElementById('newslettersuccessMessage').innerHTML = 'Subscribed! ✅ You will receive an e-mail confirmation shortly';
-           // Scroll to the success message
-          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    fetch('https://script.google.com/macros/s/AKfycbwtQ-YOR71ExlwzfSwyKDar4bC2DP3KnWN2RbMV3TGTH91AP4Lgo4kaX5clyW-f4VhXCA/exec', {
+      method: 'POST',
+      body: data,
+    })
+    .then(response => response.text())
+    .then(text => {
+      console.log("Response text:", text);
+      if (text.includes('Success')) {
+        const successMessage = document.getElementById('newslettersuccessMessage');
+        successMessage.style.display = 'block';
+        successMessage.innerHTML = 'Subscribed! ✅ You will receive an e-mail confirmation shortly';
 
-          // Reset form after success
-          newsletterForm.reset();
-        } else {
-          alert('There was a problem. Try again later.');
-        }
-      })
-      .catch(error => {
-        alert('Error: ' + error.message);
-      });
+        // Add class to trigger fade-in transition
+        successMessage.classList.add('visible');
+        
+        // Scroll to the success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Reset form after success
+        newsletterForm.reset();
+
+        // Remove the success message after 2 seconds with a fade-out effect
+        setTimeout(() => {
+          successMessage.classList.remove('visible'); // Fade out
+          setTimeout(() => {
+            successMessage.style.display = 'none'; // Hide completely after fade-out
+          }, 500); // Wait for the transition to complete
+        }, 2000); // Wait for 2 seconds before starting to hide
+      } else {
+        alert('There was a problem. Try again later.');
+      }
+    })
+    .catch(error => {
+      alert('Error: ' + error.message);
     });
-  }
+  });
+}
 
-  // Contact us submission
-  const contactForm = document.querySelector('#contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      console.log("Contact form submitted 🚀");
+// Contact us submission
+const contactForm = document.querySelector('#contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log("Contact form submitted 🚀");
 
-      const data = new FormData(contactForm);
+    const data = new FormData(contactForm);
 
-      fetch('https://script.google.com/macros/s/AKfycbwhibZFQ4EeMHV4mln_o_uU5SwnQhH-SI_IV51nJO8-HP3YaM8VF8oruZvUbEFIt8nXuQ/exec', {
-        method: 'POST',
-        body: data,
-      })
-      .then(response => response.text())
-      .then(text => {
-        console.log("Response text:", text);
-        if (text.includes('Success')) {
-          const successMessage = document.getElementById('signupsuccessMessage');
-          successMessage.style.display = 'block';
-          successMessage.innerHTML = 'Message sent! ✅ Our team will reach out soon!';
-           // Scroll to the success message
-          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          contactForm.reset();
-        } else {
-          alert('There was a problem. Try again later.');
-        }
-      })
-      .catch(error => {
-        console.error("Error sending form:", error);
-        alert('Error: ' + error.message);
-      });
+    fetch('https://script.google.com/macros/s/AKfycbzIcw489l9mT_txucQEBjvI13qfmoITPbk_MggexUamaRtKyYNmJpvlyHOWEyIepW5Nog/exec', {
+      method: 'POST',
+      body: data,
+    })
+    .then(response => response.text())
+    .then(text => {
+      console.log("Response text:", text);
+      if (text.includes('Success')) {
+        const successMessage = document.getElementById('signupsuccessMessage');
+        successMessage.style.display = 'block';
+        successMessage.innerHTML = 'Message sent! ✅ Our team will reach out soon!';
+
+        // Add class to trigger fade-in transition
+        successMessage.classList.add('visible');
+        
+        // Scroll to the success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        contactForm.reset();
+
+        // Remove the success message after 2 seconds with a fade-out effect
+        setTimeout(() => {
+          successMessage.classList.remove('visible'); // Fade out
+          setTimeout(() => {
+            successMessage.style.display = 'none'; // Hide completely after fade-out
+          }, 500); // Wait for the transition to complete
+        }, 2000); // Wait for 2 seconds before starting to hide
+      } else {
+        alert('There was a problem. Try again later.');
+      }
+    })
+    .catch(error => {
+      console.error("Error sending form:", error);
+      alert('Error: ' + error.message);
     });
-  }
+  });
+}
 
   const navItems = document.querySelectorAll('.nav-item');
 
